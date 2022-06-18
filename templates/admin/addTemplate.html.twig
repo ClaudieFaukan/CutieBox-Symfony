@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout template
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		{% include "navbar/sidebar.html.twig" %}
+        <div>
+        {{form_start(formView)}}
+			{{form_row(formView.Portrait1p)}}
+			{{form_row(formView.Portrait4p)}}
+			{{form_row(formView.Centrer1p)}}
+			{{form_row(formView.Centrer4p)}}
+			{{form_row(formView.Paysage1p)}}
+			{{form_row(formView.Paysage4p)}}
+			{{form_row(formView.Strip)}}
+			<button type="submit" class="btn btn-primary">
+				<i class="fas fa-save"></i>
+				Créer le template
+			</button>
+			{{form_end(formView)}}
+            
+        </div>
+	</div>
+
+{% endblock %}

@@ -19,10 +19,19 @@
 		<link
 		href="//db.onlinewebfonts.com/c/a4b0c7481bf5f3e12ae73efaed581108?family=Azo+Sans" rel="stylesheet" type="text/css"/>
 		<!-- Core theme CSS (includes Bootstrap)-->
-		<link href='{{asset("css/styles.css")}}' rel="stylesheet"/> {% block stylesheets %}{% endblock %}
+		<link href="{{ asset("css/styles.css")}}" rel="stylesheet"/> {% block stylesheets %}{% endblock %}
 		</head>
 		<body
 			id="page-top">
+			<!-- Navigation-->
+			<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+				<div class="container">
+					<div class="container" id="navbarResponsive">
+						<img src="{{asset('img/image.png')}}" alt="logo de l'agence" style="max-width: 20%;" style="float: left;">
+						<p>CUTIE BOX</p>
+					</div>
+				</div>
+			</nav>
 			<!-- Masthead-->
 			<header class="masthead bg-primary text-white text-center">
 				<div

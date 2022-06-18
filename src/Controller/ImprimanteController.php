@@ -25,7 +25,7 @@ class ImprimanteController extends AbstractController
     }
 
     /**
-     *@Route("/admin/create/imprimante", name="create_imprimante")
+     * @Route("/admin/create/imprimante", name="create_imprimante")
      */
     public function createImprimante(EntityManagerInterface $em, Request $request): Response
     {
@@ -45,7 +45,7 @@ class ImprimanteController extends AbstractController
     }
 
     /**
-     *@Route("/admin/list/imprimantes", name="list_imprimantes")
+     * @Route("/admin/list/imprimantes", name="list_imprimantes")
      */
     public function showImprimantes(ImprimanteRepository $imprimanteRepository): Response
     {
@@ -56,7 +56,7 @@ class ImprimanteController extends AbstractController
     }
 
     /**
-     *@Route("/admin/imprimante/{id}/edit", name="edit_imprimante")
+     * @Route("/admin/imprimante/{id}/edit", name="edit_imprimante")
      */
     public function edit($id, ImprimanteRepository $imprimanteRepository, Request $request, EntityManagerInterface $em): Response
     {
@@ -77,7 +77,7 @@ class ImprimanteController extends AbstractController
     }
 
     /**
-     *@Route("/admin/imprimante/{id}/delete", name="delete_imprimante")
+     * @Route("/admin/imprimante/{id}/delete", name="delete_imprimante")
      */
     public function delete($id, ImprimanteRepository $imprimanteRepository, Request $request, EntityManagerInterface $em): Response
     {

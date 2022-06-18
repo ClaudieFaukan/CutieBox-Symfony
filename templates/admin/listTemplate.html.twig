@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste templates
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		{% include "navbar/sidebar.html.twig" %}
+        <div class="col-8">
+	        <table class="table">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Portrait 1 personne(cutie)</th>
+						<th scope="col">Portrait 4 perosnnes</th>
+						<th scope="col">Centrer 1 personne </th>
+						<th scope="col">Centrer 4 personnes</th>
+						<th scope="col">Paysage 1 personne(cutie)</th>
+						<th scope="col">Paysage 4 personnes</th>
+						<th scope="col">Strip</th>
+						<th scope="col">Update</th>
+						<th scope="col">Supprimer</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					{% for template in templates %}
+						<tr>
+							<th scope="row">{{template.id}}</th>
+							<td>{{template.Portrait1p}}</td>
+							<td>{{template.Portrait4p}}</td>
+							<td>{{template.Centrer1p}}</td>
+							<td>{{template.Centrer4p}}</td>
+							<td>{{template.Paysage1p}}</td>
+							<td>{{template.Paysage4p}}</td>
+							<td>{{template.Strip}}</td>
+							<td>
+								<a href="#" target="_blank" rel="noopener noreferrer">
+									<button class="btn btn-warning">
+										<i class="fas fa-edit"></i>Update</button>
+								</a>
+							</td>
+							<td>
+								<a href="#" target="_blank" rel="noopener noreferrer"></a>
+								<button class="btn btn-danger">
+									<i class="fas fa-trash-alt"></i>Supprimer</button>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+        </div>
+	</div>
+
+{% endblock %}
