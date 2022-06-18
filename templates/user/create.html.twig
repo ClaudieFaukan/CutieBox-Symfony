@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un utilisateur
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		{% include "navbar/sidebar.html.twig" %}
+		<div>
+			{{form_start(formView)}}
+			{{form_row(formView.UserName)}}
+			{{form_row(formView.UserPassword)}}
+			{{form_row(formView.UserMail)}}
+			{{form_row(formView.date_debut)}}
+			{{form_row(formView.date_fin)}}
+			{{form_row(formView.autorisation_partage_gallerie)}}
+			{{form_row(formView.templates_photo_id)}}
+			<button type="submit" class="btn btn-primary">
+				<i class="fas fa-save"></i>
+				Créer l'utlisateur
+			</button>
+			{{form_end(formView)}}
+		</div>
+	</div>
+{% endblock %}

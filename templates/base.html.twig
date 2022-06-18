@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<meta name="description" content="Cutie Box avec un texte à compléter içi.."/>
+		<meta name="author" content="texte de l'auteru à compléter içi"/>
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+
+		<!-- Favicon-->
+		<link
+		rel="icon" type="image/x-icon" href="{{asset('img/favicon.ico')}}"/>
+		<!-- Font Awesome icons (free version)-->
+		<link
+		rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
+		<!-- Google fonts-->
+		<link
+		href="//db.onlinewebfonts.com/c/a4b0c7481bf5f3e12ae73efaed581108?family=Azo+Sans" rel="stylesheet" type="text/css"/>
+		<!-- Core theme CSS (includes Bootstrap)-->
+		<link href='{{asset("css/styles.css")}}' rel="stylesheet"/> {% block stylesheets %}{% endblock %}
+		</head>
+		<body
+			id="page-top">
+			<!-- Masthead-->
+			<header class="masthead bg-primary text-white text-center">
+				<div
+					class="container d-flex align-items-center flex-column">
+					<!-- Masthead Heading-->
+					<h1 class="masthead-heading text-uppercase mb-0">Cutie Box
+					</h1>
+					<!-- Icon Divider-->
+					<div class="divider-custom divider-light">
+						<div class="divider-custom-line"></div>
+						<div class="divider-custom-icon">
+							<i class="fab fa-fw fa-instagram"></i>
+						</div>
+						<div class="divider-custom-line"></div>
+					</div>
+					<!-- Masthead Subheading-->
+					<p class="masthead-subheading font-weight-light mb-0">Votre photobooth nomade</p>
+				</div>
+			</header>
+			<section>
+				{% block body %}{% endblock %}
+			</section>
+
+			<!-- Footer-->
+			<footer class="footer text-center">
+				<div class="container">
+					<div
+						class="row">
+						<!-- Footer Social Icons-->
+						<div class="col-lg-4 mb-5 mb-lg-0 mx-auto">
+							<h4 class="text-uppercase mb-4">Suivez nous</h4>
+							<a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/emotions.agency/zm">
+								<i class="fab fa-fw fa-facebook-f"></i>
+							</a>
+							<a class="btn btn-outline-light btn-social mx-1" href="https://www.youtube.com/channel/UCmWavkLncApzIiwKThO3g3w">
+								<i class="fab fa-fw fa-youtube"></i>
+							</a>
+							<a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/emotionsagency/">
+								<i class="fab fa-fw fa-instagram"></i>
+							</a>
+							<a class="btn btn-outline-light btn-social mx-1" href="https://emotions-agency.com/">
+								<i class="fab fa-fw fa-dribbble"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- Copyright Section-->
+			<div class="copyright py-4 text-center text-white">
+				<div class="container">
+					<small>Copyright © Emotions Agency 2020</small>
+				</div>
+			</div>
+
+			<!-- Bootstrap core JS-->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+			<!-- Third party plugin JS-->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+			<!-- Core theme JS-->
+			<script src="{{asset("js/script.js")}}"></script>
+
+
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+			<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+			<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+			<link
+			href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+			<!------ Include the above in your HEAD tag ---------->
+
+			<script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
+			{% block javascript %}{% endblock %}
+
+		</body>
+	</html>

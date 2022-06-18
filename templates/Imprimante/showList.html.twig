@@ -1,0 +1,84 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	Liste des imprimantes
+{% endblock %}
+{% block stylesheets %}
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		{% include "navbar/sidebar.html.twig" %}
+		<div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Nom</th>
+						<th scope="col">Numéro de série</th>
+						<th scope="col">Status</th>
+						<th scope="col">Feedback</th>
+						<th scope="col">PrintNode_ID</th>
+						<th scope="col">Client</th>
+						<th scope="col">Date Début</th>
+						<th scope="col">Date Fin</th>
+						<th scope="col">Update</th>
+						<th scope="col">Supprimer</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					{% for imprimante in imprimantes %}
+						<tr>
+							<th scope="row">{{imprimante.id}}</th>
+							<td>{{imprimante.ImpriName}}</td>
+							<td>{{imprimante.ImpriSerialNumber}}</td>
+							<td>
+								{% if imprimante.ImpriStatus %}
+									{{imprimante.ImpriStatus}}
+								{% else %}
+									<p>-</p>
+								{% endif %}
+							</td>
+							<td>
+								{% if imprimante.ImpriFeedBack %}
+									{{imprimante.ImpriFeedBack}}
+								{% else %}
+									<p>-</p>
+								{% endif %}
+							</td>
+							<td>{{imprimante.IDPrintNode}}</td>
+							<td>
+								{% if imprimante.User %}
+									{{imprimante.User}}
+								{% else %}
+									<p>-</p>
+								{% endif %}
+							</td>
+							<td>{{imprimante.DateDebut|date("d/m/Y")}}</td>
+							<td>{{imprimante.DateFin|date("d/m/Y")}}</td>
+							<td>
+								<a href="{{path('edit_imprimante', {'id':imprimante.id})}}" target="_blank" rel="noopener noreferrer">
+									<button class="btn btn-warning">
+										<i class="fas fa-edit"></i>Update</button>
+								</a>
+							</td>
+							<td>
+								<a href="{{path('delete_imprimante', {'id':imprimante.id})}}" target="_blank" rel="noopener noreferrer"></a>
+								<button class="btn btn-danger">
+									<i class="fas fa-trash-alt"></i>Supprimer</button>
+							</td>
+
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block javascript %}
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+{% endblock %}

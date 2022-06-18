@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Créer imprimante
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		{% include "navbar/sidebar.html.twig" %}
+		<div class="form-group">
+			<h2>Créer une imprimante</h2>
+
+			{{form_start(formView)}}
+
+			{{form_row(formView)}}
+
+			<button type="submit" class="btn btn-primary">
+				<i class="fas fa-save"></i>
+				Créer l'imprimante
+			</button>
+
+			{{ form_end(formView)}}
+		</div>
+	</div>
+
+{% endblock %}

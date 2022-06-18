@@ -1,0 +1,498 @@
+<html lang="en">
+
+<head>
+    <title>CutieBox </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.js"></script> -->
+    <link rel="icon" type="image/x-icon" href="{{asset('img/favicon.ico')}}" />
+    <!-- Font Awesome icons (free version)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- Google fonts-->
+    <link href="//db.onlinewebfonts.com/c/a4b0c7481bf5f3e12ae73efaed581108?family=Azo+Sans" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
+    <script type="text/javascript" src="{{asset('js/scripts.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/croppie.js')}}"></script>
+</head>
+
+
+<body id="page-top">
+
+    <!-- Masthead-->
+    <header class="bg-primary text-white text-center">
+
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase" style="font-size: 4em">CutieBox
+            </h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="fab fa-fw fa-instagram"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Subheading-->
+            <p class="masthead-subheading font-weight-light mb-0" style="font-size: 2em;">Votre photobooth nomade</p>
+        </div>
+    </header>
+
+    <!-- Portfolio Section-->
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container text-center col-sm-12">
+            <!-- Portfolio Grid Items-->
+            <div class="row justify-content-center" style="display:block">
+                <!-- TITRE STEP -->
+
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 step-1" style="font-size:3.5em">1.Selectionner votre format
+                </h2>
+
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 step-2" style="display: none;font-size:3.5em">2. Ajouter votre photo
+                                </h2>
+
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 step-3" style="display: none;font-size:3.5em">3. Recadrer votre photo
+                                </h2>
+
+     
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 step-4" style="display: none;font-size:3.5em">4. Saisssez votre mail</h2>
+  
+    
+                    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0 step-5" style="display: none;font-size:3.5em">5. Imprimer votre souvenir!</h2>
+    
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+            </div>
+            <!-- CHOICE TEMPLATE #STEP-1-->
+            <div class="row" id="step-1">
+                <div class="card col-12" style ="border: none;">
+                    <div class="card-body" style ="border: none;">
+                        <strong>
+                            <span style="color:white; font-size:2em">Portrait</span>
+                        </strong>
+                        <button id="portrait" style="border-radius: 3%;border: none; background-color:transparent">
+                            <img src="{{asset('BD/PORTRAIT.png')}}" style="max-width:60%">
+                        </button>
+                    </div>
+                </div>
+                <div class="card col-12" style ="border: none;">
+                    <div class="card-body" style ="border: none;">                      
+                        <div class="card" style ="border: none;">
+                            <strong>
+                                <span style="color:white; font-size:2em">Paysage</span>
+                            </strong>
+                            <button id="paysage" style="border-radius: 3%;border: none;background-color:transparent">
+                                <img src="{{asset('BD/PAYSAGE.png')}}" style="max-width:100%;">
+                            </button>
+                        </div>    
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- BUTTON BACK -->
+        <div class="col-md-8 col-sm-8 mx-auto" style="padding-top:2%;width:100%" >
+            <button class="btn btn-danger row justify-content-center" style="display: none; padding: 3%; border-radius: 3%;border: none; font-size: 1.6em;" id="back-step-1" onclick="window.location.reload()">
+                <i class="fas fa-backspace"></i> J'ai changer d'avis
+            </button>
+            <hr>
+        </div>
+        <!-- CROPPIE IMAGE #STEP-2-->
+        <div class="container col-12 row justify-content-center" id="step-2" style="display:none; padding-top: 2%;border:none">
+            <div class="card" style="border:none">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 text-center mx-auto">
+                            <div id="upload-demo"></div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!-- INPUT IMAGE FILE #STEP-3-->
+        <div class="col-md-8 col-sm-8 mx-auto text-center" style="display: none;width:100%" id="step-3" >
+            <button class="btn btn-primary row justify-content-center" style="padding: 3%; border-radius: 3%;border: none; font-size:1.8em;" id="back-step-1" onclick="$('#image').click()">
+                <i class="fas fa-camera" style="font-size: 1.8em;"></i> Charger votre image
+            </button>
+            <input type="file" id="image" style="width:100%; display:none">
+        </div>
+                    <!-- ORIENTATION IMAGE #ROTATE-->
+                    <div class="col-md-8 col-sm-8 mx-auto text-center row align-content-center" style="padding-top:3%;width:100%; display: none;" id="rotate">
+                        <p style="font-size: 1.8em;" class="mx-auto">Changer l'orientation de votre photo</p>
+                        <div class="row text-center row align-content-center mx-auto">
+
+                            <button style="background: none;border: none" class="vanilla-rotate" data-rotate="-90">
+                                    <i class="fas fa-undo" style="color:#ff4297;font-size:4em" id="left-rotate"></i>
+                            </button>
+                            <button style="background: none; border:none" class="vanilla-rotate" data-rotate="90">
+                                    <i class="fas fa-undo fa-flip-horizontal" style="color:#ff4297;font-size:4em" id="right-rotate"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- VALID PHOTO #STEP-35-->
+                    <div class="col-md-8 col-sm-8 mx-auto text-center row align-content-center" style="padding-top:3%;display: none" id="step-35" >
+                        <p style="color:white; font-size:1.8em" class="mx-auto">Cela vous convient ?</p>
+                        <br>
+                        <button id="valid-step35" style="width:100%;height:5%;border-radius: 3%;border: none; font-size: 1.8em; padding: 3%;">Etape suivante</button>
+                    </div>
+                    <!-- ADRESSE MAIL #STEP-4-->
+                    <div class="col-md-8 col-sm-8 mx-auto text-center row align-content-center" style="padding-top:3%;display: none" id="step-4">
+                        <span style="color:white; font-size:1.6em">Entrer votre adresse  pour imprimer votre souvenir</span>
+                        <input type="email" id="mail" placeholder="Votre adresse email" style="width:100%; font-size: 1.8em ;margin-bottom: 2%;">
+                        <div class="erreur_message"></div>
+                        <br>
+                        <button id="valid-step4" class="btn btn-primary" style="width:100%;font-size: 1.8em; padding-top: 2%;border-radius: 3%;border: none;">OK</button>             
+                    </div>
+                    <!-- PRINT #STEP-5 #UPLOAD-IMAGE-->
+                    <div class="col-md-8 col-sm-8 mx-auto text-center row align-content-center" style="padding-top:3%;display: none" id="step-5">
+                        <br>                                                                                                                       
+                        <button class="btn btn-success btn-block btn-upload-image" style="margin-top:2%; width:100%;border-radius: 3%;border: none; font-size: 1.8em; padding: 3%;" id="upload-image">Imprimer <i class="fas fa-print"></i></button>
+                    </div>
+                    <!-- LOADING GIF #LOADING-->
+                    <div class="col-md-8 col-sm-8 mx-auto align-content-center text-center">
+                        <div id="loading" class="align-content-center mx-auto"style="width:300px;padding:50px 50px;height:300px;display:none">
+                            <span style="color:white; font-size:1.6em">Envoi en cours! Veuillez patienter.. </span>
+                                <br>
+                                <img src="./assets/img/loading1.gif" style="width:200 px; height:200px">
+                        </div>
+                    </div>
+                    <!-- SUCCESS PRINT #PREVIEW-CROP-IMAGE-->                
+                    <div class="col-md-8 col-sm-8 mx-auto text-center align-content-center">
+                        <br>
+                                    <div id="preview-crop-image" class="align-content-center mx-auto"style="width:300px;padding:50px 50px;height:300px; justify-content: center;"></div>
+                    </div>
+
+
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0 mx-auto">
+                    <h4 class="text-uppercase mb-4">Suivez nous</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.facebook.com/laboiteaemotions/">
+                        <i class="fab fa-fw fa-facebook-f"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.youtube.com/channel/UCmWavkLncApzIiwKThO3g3w">
+                        <i class="fab fa-fw fa-youtube"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.instagram.com/emotionsbox.fr/">
+                        <i class="fab fa-fw fa-instagram"></i>
+                    </a>
+                    <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://emotionsbox.fr/">
+                        <i class="fab fa-fw fa-dribbble"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container">
+            <small>Copyright © Emotions Agency 2020</small>
+            <a href="./mentionslegales.html"> Mentions légale<a>
+        </div>
+
+    </div>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+    <div class="scroll-to-top d-lg-none position-fixed">
+        <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <script>
+
+        var Width
+        var Height
+        var calque
+
+        $("#portrait").click(function(ev){
+            //cacher step 1 et apparait step 2 
+
+            $("#step-1").hide();
+            $(".step-1").hide();
+
+            $(".step-2").show();
+            $("#step-2").show();
+
+            $("#step-3").show();
+
+            $("#back-step-1").show();
+            $("#rotate").show();
+
+            Width = 700
+            height = 900
+            calque = "{{asset('BD/PORTRAIT.png')}}";
+            var resize = $("#upload-demo").croppie({
+            enableExif: true,
+            enableOrientation: true,
+        
+            viewport: { 
+                width: Width,
+                height: Height,
+                type: 'square' //square
+                },
+            boundary: {
+                width: 800,
+                height: 950
+            }
+            });
+            $('.cr-viewport').css('background-size', '100%', 'max-width', '100%').css('background-image', 'url('+calque+')');
+            
+            $('#image').on('change', function() {
+                $(".step-2").hide();
+                $(".step-3").show();
+                $("#step-3").hide();
+                $("#step-35").show();
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    resize.croppie('bind', {
+                        url: e.target.result
+                    }).then(function() {
+                        console.log('jQuery bind complete');
+                    });
+                }
+                reader.readAsDataURL(this.files[0]);
+            });
+
+            //Rotation image
+            $( ".vanilla-rotate" ).click(function() {
+                resize.croppie('rotate', parseInt($(this).data('rotate')));
+            });
+            //ici la suite des step
+            $("#valid-step35").click(function(ev){
+                $(".step-3").hide();
+                $("#step-35").hide();
+                
+                $("#rotate").hide();
+
+                $(".step-4").show();
+                $("#step-4").show();
+
+            })
+            $("#valid-step4").click(function(ev){
+
+                //vérification de l'email
+                var valid;
+                if ($('#mail').val() == '') {
+                    $('#mail').css("border-color", "red").next(".erreur_message").fadeIn().text("Email manquant").css("color","red").css("font-size","1.5em");
+                    valid = false;
+                } else if (!$("#mail").val().match(/^[a-zA-ZÀ-ÖØ-öø-ÿœŒ.0-9._-]+@[a-zA-ZÀ-ÖØ-öø-ÿœŒ.0-9._-]+\.[a-z]{2,6}$/i)) {
+                    $("#mail").css("border-color", "red").next(".erreur_message").fadeIn().text("Veuillez entrer une adresse valide").css("color","red").css("font-size","1.5em");
+                    valid = false;
+                } else {
+                    $('#mail').css("border-color", "green").next(".erreur_message").fadeOut();
+                    valid = true;
+                }
+
+                if(valid == true){
+                    $(".step-4").hide();
+                    $("#step-4").hide();
+
+                    $(".step-5").show();
+                    $("#step-5").show();
+                    }
+
+            });
+            //fin des step 
+            //envoi POST en AJAX
+            $('.btn-upload-image').on('click', function(ev) {
+                $('#upload-image').prop("disabled",true);
+                $("#loading").show();
+                const time = Date.now();
+                const mail = document.getElementById("mail").value
+                test = resize.croppie('result', {
+                    type: 'canvas',
+                    size: 'viewport'
+                }).then(function(img) {
+                    $.ajax({
+                        url: "./PrintBox/croppie.php",
+                        type: "POST",
+                        data: {
+                            "image": img,
+                            "inclinaison":"portrait",
+                            "mail": mail,
+                            "time": time
+                        },
+                        success: function(data) {
+                            $("#loading").hide();
+                            html = '<span style="color:white; font-size:1.6em"> Impression en cours </span><img src='
+                            html += '{{asset("img/PrinterAction1.gif")}}';
+                            html += ' style="width:200 px; height:200px">';
+                            $("#preview-crop-image").html(html);
+                            setTimeout(()=>{
+                                html = '<span style="color:white; font-size:1.6em"> Impression reussi ! </span><img src="{{asset('img/check.gif')}}" style="width:200 px; height:200px">';
+                                $("#preview-crop-image").html(html);
+                                setTimeout(()=>{
+                                html = '<span style="color:white; font-size:1.6em"> Impression reussi ! </span><img src="{{asset('img/check-fix.png')}}" style="width:200 px; height:200px">';
+                                $("#preview-crop-image").html(html);
+                                },3000);
+                            },5000);
+                        }
+                    });
+                }).then(function(){
+                    $.ajax({
+                        url: "./sendMail.php",
+                        type: "POST",
+                        data: {
+                            "mail": mail,
+                            "time": time
+                        },
+                        success: function(data) {
+                            console.log('envoi succes')
+                        }
+                    });
+                });
+            });
+        })
+        $("#paysage").click(function(ev){
+            //cacher step 1 et apparait step 2 
+            $("#step-1").hide();
+            $(".step-1").hide();
+
+            $(".step-2").show();
+            $("#step-2").show();
+
+            $("#step-3").show();
+
+            $("#back-step-1").show();
+            $("#rotate").show();
+
+            Width = 900
+            height = 650
+            calque = "{{asset('BD/PORTRAIT.png')}}";
+            var resize = $('#upload-demo').croppie({
+            enableExif: true,
+            enableOrientation: true,
+            viewport: { // Default { width: 100, height: 100, type: 'square' } 
+                width: Width,
+                height: Height,
+                type: 'square' //square
+            },
+            boundary: {
+                width: 900,
+                height: 650
+            }
+        });
+        $('.cr-viewport').css('background-size', '100%', 'max-width', '100%').css('background-image', 'url('+calque+')');
+        
+        $( ".vanilla-rotate" ).click(function() {
+                resize.croppie('rotate', parseInt($(this).data('rotate')));
+            });
+        $('#image').on('change', function() {
+
+            $(".step-2").hide();
+            $(".step-3").show();
+
+            $("#step-3").hide();
+            $("#step-35").show();
+
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                resize.croppie('bind', {
+                    url: e.target.result
+                }).then(function() {
+                    console.log('jQuery bind complete');
+                });
+            }
+            reader.readAsDataURL(this.files[0]);
+        });
+            //ici la suite des step
+            $("#valid-step35").click(function(ev){
+                $(".step-3").hide();
+                $("#step-35").hide();
+                
+                $("#rotate").hide();
+
+                $(".step-4").show();
+                $("#step-4").show();
+            })
+            $("#valid-step4").click(function(ev){
+
+                //Verification email
+                var valid
+                //EMAIL
+                    if ($('#mail').val() == '') {
+                        $('#mail').css("border-color", "red").next(".erreur_message").fadeIn().text("Email manquant").css("color","red").css("font-size","1.5em");
+                        valid = false;
+                    } else if (!$("#mail").val().match(/^[a-zA-ZÀ-ÖØ-öø-ÿœŒ.0-9._-]+@[a-zA-ZÀ-ÖØ-öø-ÿœŒ.0-9._-]+\.[a-z]{2,6}$/i)) {
+                        $("#mail").css("border-color", "red").next(".erreur_message").fadeIn().text("Veuillez entrer une adresse valide").css("color","red").css("font-size","1.5em");
+                        valid = false;
+                    } else {
+                        $('#mail').css("border-color", "green").next(".erreur_message").fadeOut();
+                        valid = true;
+                    }
+                    
+                    if(valid == true){
+                        $(".step-4").hide();
+                        $("#step-4").hide();
+
+                    $(".step-5").show();
+                    $("#step-5").show();
+                    }
+
+            });
+            //fin des step 
+        $('.btn-upload-image').on('click', function(ev) {
+            $('#upload-image').prop("disabled",true);
+            $("#loading").show();
+            const mail = document.getElementById("mail").value
+            const time = Date.now();
+            resize.croppie('result', {
+                type: 'base64',
+                size: 'viewport'
+            }).then(function(img) {
+                $.ajax({
+                    url: "./PrintBox/croppie.php",
+                    type: "POST",
+                    data: {
+                        "image": img,
+                        "inclinaison":"paysage",
+                        "mail": mail,
+                        "time": time
+                    },
+                        success: function(data) {
+                            $("#loading").hide();
+                            html = '<span style="color:white; font-size:1.6em"> Impression en cours </span><img src="{{asset("img/PrinterAction1.gif")}}" style="width:200 px; height:200px">';
+                            $("#preview-crop-image").html(html);
+                            setTimeout(()=>{
+                                html = '<span style="color:white; font-size:1.6em"> Impression reussi ! </span><img src="{{asset("img/check.gif")}}" style="width:200 px; height:200px">';
+                                $("#preview-crop-image").html(html);
+                                setTimeout(()=>{
+                                html = '<span style="color:white; font-size:1.6em"> Impression reussi ! </span><img src="{{asset("img/check-fix.png")}}" style="width:200 px; height:200px">';
+                                $("#preview-crop-image").html(html);
+                                },3000);
+                            },5000);
+                        }
+                });
+            }).then(function(){
+                $.ajax({
+                        url: "./sendMail.php",
+                        type: "POST",
+                        data: {
+                            "mail": mail,
+                            "time": time
+                        },
+                        success: function(data) {
+                            console.log('envoi succes')
+                        }
+                    });
+            });
+        });
+        });
+    </script>
+
+</body>
+
+</html>

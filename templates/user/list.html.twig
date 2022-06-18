@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+{% block title %}
+	Liste des users
+{% endblock %}
+{% block body %}
+	<div class="row">
+		{% include"navbar/sidebar.html.twig" %}
+		<div class="row col-8">
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Nom</th>
+						<th scope="col">Email</th>
+						<th scope="col">Lien HTML</th>
+						<th scope="col">QR Code</th>
+						<th scope="col">Unique ID</th>
+						<th scope="col">Template ID</th>
+						<th scope="col">Date début</th>
+						<th scope="col">Date fin</th>
+						<th scope="col">Autorisation partage gallerie</th>
+						<th scope="col">Lien de la gallerie</th>
+						<th scope="col">Imprimante ID</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					{% for user in users %}
+						<tr>
+							<th scope="row">{{user.id}}</th>
+							<td>{{user.UserName}}</td>
+							<td>{{user.UserMail}}</td>
+							<td>
+								{{user.LienHtml}}</td>
+							<td>{{ user.QrCode }}</td>
+							<td>{{ user.UniqId }}</td>
+							<td>{{user.TemplatesPhotoId}}</td>
+							<td>{{ user.DateDebut|date}}</td>
+							<td>{{ user.DateFin|date }}</td>
+							<td>{{ user.AutorisationPartageGallerie }}</td>
+							<td>{{ user.LienGallerie }}</td>
+
+						</tr>
+
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+{% endblock %}
